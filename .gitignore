@@ -2,3 +2,4 @@ main.cpp
 *.webp
 cmake-build-debug
 .idea/
+*.png

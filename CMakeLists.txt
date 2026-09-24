@@ -12,6 +12,10 @@ find_package(g2o REQUIRED)
 add_executable(main main.cpp)
 add_executable(g2o g2o.cpp)
 add_executable(ceres_o ceres.cpp)
+add_executable(orb_cv orb_cv.cpp)
+
+target_link_libraries(orb_cv
+        ${OpenCV_LIBS})
 
 target_link_libraries(main
         Sophus::Sophus
