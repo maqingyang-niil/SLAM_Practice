@@ -13,24 +13,27 @@ add_executable(main main.cpp)
 add_executable(g2o g2o.cpp)
 add_executable(ceres_o ceres.cpp)
 add_executable(orb_cv orb_cv.cpp)
+add_executable(icp_svd icp_svd.cpp)
 
 target_link_libraries(orb_cv
         ${OpenCV_LIBS})
-
 target_link_libraries(main
         Sophus::Sophus
         Eigen3::Eigen
         ${OpenCV_LIBS}
         Ceres::ceres)
-
 target_link_libraries(ceres_o
         Sophus::Sophus
         Eigen3::Eigen
         ${OpenCV_LIBS}
         Ceres::ceres)
-
 target_link_libraries(g2o
         Eigen3::Eigen
         g2o::core
         g2o::solver_dense
         ${OpenCV_LIBS})
+target_link_libraries(
+        icp_svd
+        Eigen3::Eigen
+        ${OpenCV_LIBS}
+)
